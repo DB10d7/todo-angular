@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../todo.service';
-import { todos } from '../classess/todos';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-to-do-list',
@@ -10,7 +10,7 @@ import { todos } from '../classess/todos';
 export class ToDoListComponent implements OnInit {
   
   listTodos: any;
-  constructor(private todo:TodoService) {
+  constructor(private todo:TodoService,private route: ActivatedRoute, private router: Router) {
    }
 
   
@@ -20,5 +20,19 @@ export class ToDoListComponent implements OnInit {
 
      this.listTodos = resp;
      })
+  }
+  deleteToDo(row:any){
+
+    this.todo.deleteToDo(row.id).subscribe((res)=>{
+      console.warn("data is here",res);
+      alert("Delete ToDo");
+      this.ngOnInit();
+    })
+  }
+  updateToDo(id:number) {
+    this.router.navigate(['list/update',id]);
+  }
+  collectToDo() {
+    this.router.navigate(['add']);
   }
 }

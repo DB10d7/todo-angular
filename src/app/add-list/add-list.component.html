@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container main">
         <div class="row">
             <form [formGroup]="addToDo" (ngSubmit)="collectToDo()">
                 <div class="form-group mb-3">
@@ -23,6 +23,13 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid foot">
+            <div class="footer-copyright  text-center py-3 ">© 2020 Copyright:
+                <a class="px-3"href="#"> ToDo.com</a>
+            </div>
         </div>
     </div>
 </body>

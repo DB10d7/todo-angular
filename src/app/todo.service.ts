@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { todos } from './classess/todos';
+import { Observable, pipe } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,11 @@ export class TodoService {
   saveToDo(res:any){
     console.warn("service",res);
     return this.http.post<any>(this.url,res);
+  }
+  deleteToDo(id: number){
+    return this.http.delete<any>("http://localhost:3000/todos/"+id);
+  }
+  updateToDo(id: number, data: any){
+    return this.http.put<any>("http://localhost:3000/todos/"+id, data);
   }
 }

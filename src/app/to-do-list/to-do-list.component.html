@@ -18,7 +18,8 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Notes</th>
-                <th scope="col">Action</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -26,12 +27,21 @@
                   <th>{{todo.id}}</th>
                   <th>{{todo.name}}</th>
                   <th>{{todo.note}}</th>
-                  <th><button type="button"class="btn btn-danger">Delete</button></th>
+                  <th><button (click)="updateToDo(todo.id)" type="button"class="btn btn-primary">Update</button></th>
+                  <th><button (click)="deleteToDo(todo)" type="button"class="btn btn-danger">Delete</button></th>
               </tr>        
             </tbody>
           </table>
         </div>
-        <button type="button" class="btn btn-success">Add ToDo</button>
+        <button type="button" (click)="collectToDo()"  class="btn btn-success">Add ToDo</button>
+    </div>
+    
+    <div class="footer">
+        <div class="container-fluid foot">
+            <div class="footer-copyright  text-center py-3 ">© 2020 Copyright:
+                <a class="px-3"href="#"> ToDo.com</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

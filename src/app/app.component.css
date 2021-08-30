@@ -1,0 +1,32 @@
+html,body{
+    min-height: 100vh;
+}
+
+.navbar{
+    background-color: black;
+    margin-bottom: 100px;
+}
+.nav-link{
+    color: #ffff !important;
+}
+.navbar-brand{
+    color:#ffff;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.navbar-span{
+    color:rgb(221, 214, 214);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.foot{
+    background-color: black;
+    margin-top: 350px;
+}
+.footer-copyright{
+    color: #ffff;
+}
+.foot a{
+    color:antiquewhite;
+    text-decoration: none;
+}
